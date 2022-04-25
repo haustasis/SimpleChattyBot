@@ -3,7 +3,10 @@ package bot;
 public class SimpleBot {
 
     public static void main(String[] args) {
-        System.out.println("Hello! My name is Dopamine.");
-        System.out.println("I was created in 1981.");
+        botGreeting("Paca", 2022);
+    }
+
+    private static void botGreeting(String name, int birthYear) {
+        System.out.printf("Hello! my name is %s. %nI was created in %d.", name, birthYear);
     }
 }
