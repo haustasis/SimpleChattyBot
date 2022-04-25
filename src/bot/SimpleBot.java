@@ -1,6 +1,7 @@
 package bot;
 
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class SimpleBot {
     public static void main(String[] args) {
@@ -16,10 +17,23 @@ public class SimpleBot {
         System.out.println("Let me guess your age.");
         System.out.println("Enter remainders of dividing your age by 3, 5 and 7.");
 
-        // reading all remainders
-        int[] arrA = {scanner.nextInt(), scanner.nextInt(), scanner.nextInt()};
-        int age = (arrA[0]*70 + arrA[1]*21 + arrA[2]*15) % 15;
+        int rem3 = scanner.nextInt();
+        int rem5 = scanner.nextInt();
+        int rem7 = scanner.nextInt();
 
-        System.out.printf("Your age is %d; that's a good time to start programming!", age);
+        int age = (rem3 * 70 + rem5 * 21 + rem7 * 15) % 105;
+
+        System.out.println("Your age is " + age + "; that's a good time to start programming!");
+        System.out.println("Now I will prove to you that I can count to any number you want.");
+
+        // read a number and count to it here
+        int size = scanner.nextInt();
+
+        IntStream.iterate(0, n -> n+1).limit(size + 1).mapToObj(x -> x + "!").forEach(System.out::println);
+
+        IntStream.rangeClosed(0, scanner.nextInt()).forEach(e -> System.out.println(e+"!"));
+
+
+        System.out.println("Completed, have a nice day!");
     }
 }
