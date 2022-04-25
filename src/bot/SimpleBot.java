@@ -10,10 +10,20 @@ public class SimpleBot {
         System.out.println("I was created in 2018.");
         System.out.println("Please, remind me your name.");
 
-        // reading a name
-        Scanner sc = new Scanner(System.in);
-        String name = sc.nextLine();
+        String name = scanner.nextLine();
 
-        System.out.printf("What a great name you have, %s!", name);
+        System.out.println("What a great name you have, " + name + "!");
+        System.out.println("Let me guess your age.");
+        System.out.println("Enter remainders of dividing your age by 3, 5 and 7.");
+
+        // reading all remainders
+        int remainder3 = scanner.nextInt();
+        int remainder5 = scanner.nextInt();
+        int remainder7 = scanner.nextInt();
+        scanner.nextLine();
+
+        int age = (remainder3 * 70 + remainder5 * 21 + remainder7 * 15) % 105;
+
+        System.out.printf("Your age is %d; that's a good time to start programming!", age);
     }
 }
