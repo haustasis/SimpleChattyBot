@@ -1,12 +1,19 @@
 package bot;
 
+import java.util.Scanner;
+
 public class SimpleBot {
-
     public static void main(String[] args) {
-        botGreeting("Paca", 2022);
-    }
+        Scanner scanner = new Scanner(System.in);
 
-    private static void botGreeting(String name, int birthYear) {
-        System.out.printf("Hello! my name is %s. %nI was created in %d.", name, birthYear);
+        System.out.println("Hello! My name is Aid.");
+        System.out.println("I was created in 2018.");
+        System.out.println("Please, remind me your name.");
+
+        // reading a name
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+
+        System.out.printf("What a great name you have, %s!", name);
     }
 }
